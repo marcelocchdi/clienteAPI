@@ -1,11 +1,11 @@
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080,
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3001,
     host = process.env.OPENSHIFT_NODEJS_IP || "localhost";
 
 var express = require('express'),
     bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');    
-mongoose.connect('mongodb://172.30.226.248:27017/mongodb');
+mongoose.connect('mongodb://localhost:27017/mongodb');
 
 var Cliente = require('./models/clientes_model');
 
