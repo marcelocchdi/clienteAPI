@@ -38,7 +38,8 @@ router.route('/clientes')
                 res.send(error);
 
             res.json({ message: 'Cliente criado!' });
-        })
+        });
+    })
     .get(function(req, res) { 
             Usuario.find(function(err, usuarios) {
                 if(err)
