@@ -43,11 +43,11 @@ router.route('/clientes')
         });
     })
     .get(function(req, res) { 
-        Usuario.find(function(err, usuarios) {
+        Cliente.find(function(err, Cliente) {
             if(err)
                 res.send(err);
 
-            res.json(usuarios);
+            res.json(Cliente);
         });
     });
 
