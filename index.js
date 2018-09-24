@@ -38,7 +38,7 @@ router.route('/clientes')
                 res.send(error);
 
             res.json({ message: 'Cliente criado!' });
-        });
+        })
     .get(function(req, res) { 
             Usuario.find(function(err, usuarios) {
                 if(err)
@@ -88,7 +88,7 @@ router.route('/clientes/:codCliente')
             res.json({ message: 'Cliente excluído com Sucesso! '});
         });
     });
-    
+
 app.use('/api', router);
 
 
