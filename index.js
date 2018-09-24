@@ -14,6 +14,8 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var router = express.Router();
+
 router.use(function(req, res, next) {
     console.log('Algo está acontecendo aqui........');
     next();
@@ -41,14 +43,14 @@ router.route('/clientes')
         });
     })
     .get(function(req, res) { 
-            Usuario.find(function(err, usuarios) {
-                if(err)
-                    res.send(err);
+        Usuario.find(function(err, usuarios) {
+            if(err)
+                res.send(err);
 
-                res.json(usuarios);
-            });
+            res.json(usuarios);
         });
-});
+    });
+
 
 router.route('/clientes/:codCliente')
     .get(function(req, res) {
@@ -88,7 +90,7 @@ router.route('/clientes/:codCliente')
  
             res.json({ message: 'Cliente excluído com Sucesso! '});
         });
-    });
+    })
 
 app.use('/api', router);
 
