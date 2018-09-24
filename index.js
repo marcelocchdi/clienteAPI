@@ -38,17 +38,57 @@ router.route('/clientes')
                 res.send(error);
 
             res.json({ message: 'Cliente criado!' });
-        })
+        });
     .get(function(req, res) { 
             Usuario.find(function(err, usuarios) {
                 if(err)
                     res.send(err);
-                         
+
                 res.json(usuarios);
             });
         });
 });
 
+router.route('/clientes/:codCliente')
+    .get(function(req, res) {
+ 
+        //Função para Selecionar Por Id e verificar se há algum erro:
+        Usuario.findById(req.params.codCliente, function(error, Cliente) {
+            if(error)
+                res.send(error);
+ 
+            res.json(Cliente);
+        });
+    })
+    .put(function(req, res) {
+        Usuario.findById(req.params.codCliente, function(error, Cliente) {
+            if(error)
+                res.send(error);
+ 
+            Cliente.codCliente = req.body.codCliente;
+            Cliente.cpf = req.body.cpf;
+            Cliente.nome = req.body.nome;
+            Cliente.email = req.body.email;
+ 
+            Cliente.save(function(error) {
+                if(error)
+                    res.send(error);
+ 
+                res.json({ message: 'Cliente Atualizado!' });
+            });
+        });
+    })
+    .delete(function(req, res) {
+        Cliente.remove({
+        _id: req.params.codCliente
+        }, function(error) {
+            if(error)
+                res.send(error);
+ 
+            res.json({ message: 'Cliente excluído com Sucesso! '});
+        });
+    });
+    
 app.use('/api', router);
 
 
