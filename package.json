@@ -1,0 +1,30 @@
+{
+  "name": "clienteapi",
+  "version": "1.0.0",
+  "description": "��C\u0000l\u0000i\u0000e\u0000n\u0000t\u0000e\u0000 \u0000A\u0000P\u0000I\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelocchdi/clienteAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelocchdi/clienteAPI/issues"
+  },
+  "homepage": "https://github.com/marcelocchdi/clienteAPI#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "mongodb": "^3.1.6",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}

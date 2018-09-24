@@ -1,0 +1,14 @@
+[
+    {
+        "codCliente": "001",
+        "cpf": "13855585550",
+        "nome":"Jose Manoel",
+        "email": "manoel@teste.com.br"
+    },
+    {
+        "codCliente": "002",
+        "cpf": "125455550",
+        "nome":"Antonio Gabriel",
+        "email": "antonio@gabriel.net.br"
+    },
+]
