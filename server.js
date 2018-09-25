@@ -43,7 +43,7 @@ var  executeQuery = function(res, query){
             if (data.recordset == null || data.recordset == 'undefined') {
                 clientes = { Mensagem: { descricao: "OK"} };
             } else {
-                clientes = { Clientes: data.recordset };
+                clientes = { clientes: data.recordset };
             }
             console.log(clientes);
             res.send(clientes);
